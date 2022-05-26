@@ -11,22 +11,21 @@ import NavBar from "./stories/Components/NavBar/NavBar";
 const containerCN = cntl`
   mt-3
   p-3
-  border
   rounded
 `;
 
 const App = () => {
   return (
-    <div className="bg-black h-full w-full flex justify-center overflow-auto">
-      <div className="p-10 w-1/3">
-        <p>Create a screen here!</p>
+    <div className="bg-black h-full w-full overflow-auto">
+      <div>
+        {/* <p>Create a screen here!</p>
         <p>
           Below are the provided Components that will be needed. You won&apos;t
           be expected to modify these Components at all, but you may need to
           study them and pass props.
-        </p>
-        <div className={containerCN}>
-          <p>Nav bar</p>
+        </p> */}
+        <div>
+          {/* <p>Nav bar</p> */}
           <NavBar />
         </div>
         <div className={containerCN}>
@@ -38,9 +37,50 @@ const App = () => {
           />
         </div>
         <div className={containerCN}>
-          <p>Collapsible Section</p>
-          <CollapsibleSection title="Section Title">
-            <p>inner content</p>
+          <CollapsibleSection title="Overview">
+            <Dropdown
+              label="Company Name"
+              options={Array(5)
+                .fill()
+                .map((a, index) => ({
+                  label: `Option ${index + 1}`,
+                  value: `Option ${index + 1}`,
+                }))}
+            />
+            <Input label="eSpace Name" placeholder="placeholder" />
+            <Dropdown
+              label="Subscription"
+              options={Array(5)
+                .fill()
+                .map((a, index) => ({
+                  label: `Option ${index + 1}`,
+                  value: `Option ${index + 1}`,
+                }))}
+            />
+          </CollapsibleSection>
+        </div>
+        <div className={containerCN}>
+          <CollapsibleSection title="Owner Information">
+            <Input label="Primary Owner" placeholder="placeholder" />
+            <Input label="Primary Owner Email" placeholder="placeholder" />
+            <Input label="Primary Owner Phone" placeholder="placeholder" />
+          </CollapsibleSection>
+        </div>
+        <div className={containerCN}>
+          <CollapsibleSection title="Location Information">
+            <Input label="Street Adresss" placeholder="placeholder" />
+            <Input label="Suite/Unit" placeholder="placeholder" />
+            <Input label="Postal Code" placeholder="placeholder" />
+            <Input label="City" placeholder="placeholder" />
+            <Dropdown
+              label="City"
+              options={Array(5)
+                .fill()
+                .map((a, index) => ({
+                  label: `Option ${index + 1}`,
+                  value: `Option ${index + 1}`,
+                }))}
+            />
           </CollapsibleSection>
         </div>
         <div className={containerCN}>
